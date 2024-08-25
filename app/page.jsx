@@ -5,11 +5,17 @@ import logo from "@/public/logo.png";
 import { Typewriter, Cursor } from "react-simple-typewriter";
 import ButtonsProvider from "./components/ButtonsProvider";
 import { useSession } from "next-auth/react";
+import {redirect} from "next/navigation"
 
 export default function Home() {
 
   const { data: session } = useSession();
   console.log(session);
+
+  if(session){
+    redirect("/dashboard/notes");
+  }
+  
   return (
     <section className="flex flex-col items-center justify-center w-full gap-2 min-h-svh ">
       <Image
