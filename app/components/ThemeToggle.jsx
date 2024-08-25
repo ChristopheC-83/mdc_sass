@@ -3,7 +3,7 @@
 import * as React from "react"
 import {  LogOut, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-
+import { useRouter } from "next/navigation"
 import { signOut, useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button"
 import {
@@ -15,10 +15,12 @@ import {
 
 export function ThemeToggle() {
   const { setTheme } = useTheme()
+  const router = useRouter()
 
   const { data: session, status } = useSession();
   function logOut(){
     signOut();
+    router.push("/");
   }
 
   return (
