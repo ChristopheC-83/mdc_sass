@@ -31,6 +31,10 @@ export default async function Notes() {
           className={`flex min-h-96 flex-col items-center justify-center border border-dashed p-3`}
         >
           <p>Il n'y a pas de note pour le moment</p>
+          <p className="text-sm text-muted-foreground">Commencez dès maintenant à créer des notre via notre application</p>
+          <Button className={`bg-orange-500 hover:bg-orange-600 my-3`}>
+          <Link href="/dashboard/notes/create" className={`my-3 text-white `}><p>Créez votre première note !</p></Link>
+          </Button>
         </div>
       ) : (
         <div className="flex flex-col gap-y-4">
@@ -54,7 +58,7 @@ export default async function Notes() {
                   type="button"
                   className={`bg-yellow-500 hover:bg-yellow-600 mt-4 text-white mb-3`}
                 >
-                  <Link href={`notes/note/${note?.id}`}>
+                  <Link href={`/dashboard/notes/note/${note?.id}`}>
                     <FilePenLine className={`w-4`} />
                   </Link>
                 </Button>
