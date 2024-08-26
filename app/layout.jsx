@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "./components/Nav";
 import { ThemeProvider } from "./components/theme-provider";
 import SessionWrapper from "@/lib/SessionWrapper";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           >
             <Nav />
             {children}
+            <Toaster position="top-center" richColors expand={true} />
           </ThemeProvider>
         </SessionWrapper>
       </body>

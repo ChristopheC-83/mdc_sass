@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { toast } from "sonner"
 
 export function ThemeToggle() {
   const { setTheme } = useTheme()
@@ -20,7 +21,7 @@ export function ThemeToggle() {
   const { data: session, status } = useSession();
   function logOut(){
     signOut();
-    router.push("/");
+    toast.success("Vous êtes déconnecté !")
   }
 
   return (

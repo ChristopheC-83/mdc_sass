@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
+import { toast } from "sonner";
 export default function ButtonsProvider() {
   
 
@@ -11,6 +12,7 @@ export default function ButtonsProvider() {
 
   function onLogin(provider) {
     signIn(provider);
+    
   }
 
   return (
