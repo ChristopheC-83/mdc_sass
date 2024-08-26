@@ -43,6 +43,7 @@ model User {
   stripeCustomerId String?   @unique
   accounts         Account[]
   sessions         Session[]
+  notes Notes[]
 }
 
 model VerificationToken {
@@ -51,4 +52,15 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Notes {
+  id String @id @unique @default(cuid())
+  title String?
+  description String?
+  completed Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId String 
+  user User @relation(fields:[userId],references:[id])
 }

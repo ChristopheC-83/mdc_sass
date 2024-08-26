@@ -32,7 +32,7 @@ export default function DashboardNav() {
   ];
 
   return (
-    <nav className={`flex md:flex-col md:h-full w-full md:w-16 lg:w-40 gap-2`}>
+    <nav className={`flex md:flex-col md:h-full w-full max-md:mb-3 md:w-16 lg:w-40 gap-2`}>
       {menuItems.map((item, index) => (
         <Link
           key={index}
